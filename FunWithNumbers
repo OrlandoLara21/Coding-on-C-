@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+// Global variables are bad.
+int subtraction(int x, int y)     //this is a funtion
+{
+  int r=x-y;
+  return r;   //return r; is so that we you use this funtion that is the value that it will give you
+}   //funtion ends here
+
+int multiplication(int x, int y)     //this is a funtion
+{
+  int r=x*y;
+  return r;
+}          //funtion ends here
+
+int division(int a,int b)     //this is a funtion
+{
+  int r=a/b;
+  return r;
+}   //funtion ends here
+
+int remainder(int a,int b)  //you need to declare the varible inside the parenthesis
+{
+  int r=a%b;    //or you can declare things in the funtion itsel
+  return r;
+}
+
+int main()  //this is where the main funtion starts(main program)
+{
+  int a,b,sub,mul,divi,re;
+  cout << "This program will do four mathematical operations with two numbers that you give me\n";
+  cout << "What's the first number?  ";
+  cin >> a;
+  cout << "What's the second number?  ";
+  cin >> b;
+  cout<<endl;
+  sub=subtraction(a,b);
+  mul=multiplication(a,b);
+  divi=division(a,b);
+  re=remainder(a,b);
+  cout<< "The difference between the two numbers is "<<sub<<endl;
+  cout<<"The product of the two numbers is "<<mul<<endl;
+  cout<<"The integer based division of the two numbers (so no decimal point), first divided by second, is "<<divi<<endl;
+  cout<<"The remainder of integer division of the two numbers is "<<re<<endl<<endl;
+}
