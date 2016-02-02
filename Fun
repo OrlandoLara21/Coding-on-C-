@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int a,b,mul,sub,divi,remain;
+  cout<< "This program does four arthmetic operations with two integers that you will give me."<<endl;
+  cout<<"Give the first integer";
+  cin>>a;
+  cout<<"Give the second integer";
+  cin>>b;
+  mul=a*b;
+  sub=a-b;
+  divi=a/b;
+  remain=a%b;
+  cout<<"The difference of the two numbers is "<<sub<<endl;
+  cout<<"The product of the two numbers is "<<mul<<endl;
+  cout<<"The integer based division of the two numbers (so no decimal point), first divided by second, is "<<divi<<endl;
+  cout<<"The remainder of integer division of the two numbers is "<<remain<<endl<<endl;
+}
