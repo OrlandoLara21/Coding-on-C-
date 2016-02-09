@@ -1,0 +1,11 @@
+#include <iostream>
+ using namespace std;
+
+ int main(){
+   float x,result;
+   cout<<"Hey there, lets do some temperature conversions"<<endl;
+   cout<<"First give me the temperature in Farenheit"<<endl;
+   cin>>x;
+   result=5.0/9.0*(x-32.0);
+   cout<<"The temperature in Celsius is "<<result<<endl;
+ }
