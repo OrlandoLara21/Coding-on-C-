@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+double temp,con;
+char unit;
+
+float cel(float x){
+  con=5.0/9.0*(x-32.0);
+  return con;
+}
+
+float far(float x){
+  con=(9.0/5.0*x)+32.0;
+  return con;
+}
+
+int main(){
+  float temp,con;
+  char unit;
+  
+  cout<<"*******************************************************\nWelcome, this is a unit converter between Celsius and Fahrenheit to check water"<<endl;
+  do{
+      cout<<"Are Your units in Celsius or Fahrenheit?\nPress C for Celsius and F for Farenheit  ";
+      cin>>unit;
+      if(unit=='F'){
+       cout<<"What is the temperature in Fahrenheit?   ";
+       cin>>temp;
+       con=cel(temp);
+       cout<<temp<<" degrees Fahrenheit are equal to "<<con<<" degrees Celsius"<<endl<<endl;
+       if(con<100&&con>0)
+	 cout<<"Water does not boil at this temperature; It is currently in liquid state\n";
+       else
+	 if(con<0)
+	   cout<<"Water is currently frozen";
+	 else
+	   cout<<"Water is evaporating at this temperature"<<endl;
+      }
+      else
+	if(unit=='C'){
+       cout<<"What is the temperature in Celsius?      ";
+       cin>>temp;
+       con=far(temp);
+       cout<<temp<<" degrees Celsius are equal to "<<con<<" degrees Fahrenheit"<<endl<<endl;
+	}
+	else
+	  cout<<"I'm sorry, that was not a valid entry.\n\n";
+    }while(unit!='C'&&unit!='F');
+}
