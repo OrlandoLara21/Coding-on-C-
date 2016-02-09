@@ -1,0 +1,59 @@
+#include<iostream>
+#include<ctime>
+#include<cstdlib>
+#include<sstream>
+
+using namespace std;
+
+template<typename T>  // T is just a template parameter like "int, char,float,string,etc...
+string nts(T number){   //this is a function
+  stringstream ss;
+  ss<<number;
+  return ss.str();
+}
+
+int main()
+{
+  string stats="",gam,tri;
+  int opcion,num,guess,tries=0,game=0;
+  cout<<"**********************************************\n";
+  cout<<"*************WELCOME TO PARAGON***************\n";
+  cout<<"**********************************************\n";
+  cout<<"This is a little game in which you have to guess\nthe number I'm thinking about"<<endl;
+  do{
+  cout<<"\n 1.-Guess the number\n 2.-Statistics\n 3.-Exit\n";
+  cin >>opcion;
+  switch(opcion){
+  case 1:
+    {
+      tries=0;
+      srand(time(0));
+      num=rand()%100+1;
+      do{
+        cout<<"What number between 1 and 100 am I thinking of? ";
+        cin>>guess;
+        if(guess<num)
+        cout<<"Ups, That's too low\n";
+        else
+        if(guess>num)
+        cout<<"NO, That's too high\n";
+        else
+        cout<<"CONGRATULATIONS YOU GUESSED MY NUMBER!!!\nIf you want to play again, just press 1\n";
+        tries++; //The number of tries will increment in one every time the user inputs a number
+      }while(guess!=num);
+      game++;
+      stats+="In game "+nts(game)+", you guessed the number in "+nts(tries)+" tries\n";
+    }
+    break;
+    case 2:
+    cout<<stats;
+    break;
+    case 3:
+    cout<<"Thanks for playing, see you next time"<<endl;
+    break;
+    default:
+    cout<<"I'm sorry, this is not a valid option"<<endl<<endl;
+    break;
+  }
+}while(opcion!=3);
+}
