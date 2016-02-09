@@ -1,0 +1,27 @@
+#include <iostream>
+ using namespace std;
+
+ int main(){
+   int tries,num,guess;
+   cout<<"**********************************************\n";
+   cout<<"*************WELCOME TO PARAGON***************\n";
+   cout<<"**********************************************\n";
+   cout<<"This is a little game in which you have to guess\nthe number I'm thinking about"<<endl;
+   tries=0;
+   srand(time(0));
+   num=rand()%100+1;
+   do{
+   cout<<"Hey, Guess what number between 1 and 100 I'm thinking of"<<endl;
+   cin>>guess;
+   if(guess<num)
+   cout<<"hold on, that's too low"<<endl;
+   else
+   if(guess>num)
+   cout<<"nope,that was too high\n";
+   else
+   cout<<"CONGRATULATIONS, YOU GUESSED IT"<<endl;
+   tries++;
+ }while(guess!=num);
+ cout<<"You did it in "<<tries<<" tries\n";
+ cout<<"Thank you for visiting."<<endl;
+ }
