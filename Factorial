@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int factorial(int a){
+  int n,count=1,acum=1;
+  do{
+    acum*=count; //acum=acum*count
+    count++;
+  }while(count<=a);
+  return acum;
+}
+
+int main(){
+  int x,fact;
+  cout<<"We shall find out the factorial of a number"<<endl;
+  do{
+  cout<<"So... what is the non-negative number? ";
+  cin>>x;
+}while(x<0);
+  fact=factorial(x);
+  cout<<"The factorial of "<<x<<" is "<<fact<<endl;
+}
