@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int superpower(int a,int b){ //It is pretty straight foward
+  int count=1, acum=a;       //No need for comments
+  do{
+    acum*=a;
+    count++;
+  }while(count<b);
+  return acum;
+}
+
+int main(){
+  int num,x,y;
+  cout<<"Hello there, this program will raise an integer to the something power."<<endl;
+  cout<<"So what is the base number? ";
+  cin>>x;
+  cout<<"And what is the exponent? ";
+  cin>>y;
+  num=superpower(x,y);
+  cout<<"The result is "<<num<<endl;
+
+}
