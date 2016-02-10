@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <cstdlib>
+#include <sstream>
+
+using namespace std;
+
+int factorial(int a){
+  int n,count=1,acum=1;
+  do{
+    acum*=count;
+    count++;
+  }while(count<=a);
+  return acum;
+}
+
+int stn(string a){
+  int num;
+  stringstream stream(a);
+  stream>>num;
+  return num;
+}
+
+int main(){
+  int root,fact;
+  string x;
+  cout<<"Hello, this program gives you the factorial of a non-negative number";
+  do{
+    while(true){
+      cout<<"Let's see, what is the non-negative number? ";
+      getline(cin,x);
+      if(stn(x)||x=="0"){
+        root=stn(x);
+        break;
+      }
+      cout<<"This is not a number, please try again\n";
+    }
+    if(root<0)
+      cout<<"Hold on this is a negative number, please try again\n";
+  }while(root<0);
+  fact=factorial(root);
+  cout<<"The factorial of "<<root<<" is "<<fact<<endl<<endl;
+}
