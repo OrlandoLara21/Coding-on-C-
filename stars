@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void stars(int a){  //void is for functions that dont return anything
+  int count=0;
+  string star="";
+  while(count<a){
+    star+="*"; //star=star+"***";
+    count++;
+  }
+  cout<<"Here you go\n"<<star<<endl<<endl;
+}
+
+int main(){
+  int x;
+  cout<<"This program will print out the number of stars you tell me to print\n so... how many is going to be? :) ";
+  cin>>x;
+  stars(x);
+}
