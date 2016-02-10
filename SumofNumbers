@@ -1,0 +1,49 @@
+#include <iostream>
+#include <sstream>  //this is the library to able to convert from string to number
+
+using namespace std;
+
+int range(int a,int b){
+  int num;
+  for(num=a++;a<=b;a++){ //num=a++ means  num=a;a=a+1;
+    num+=a;
+  }
+  return num;
+}
+
+int conversion(string a){
+  int num;
+  stringstream beam(a);
+  beam>>num;
+  return num;
+}
+
+int main(){
+  int x,y,answer;
+  string inx,iny;
+  cout<<"Hello there, I'm going to help you find out what the sum of the range between two integers is"<<endl;
+  do{
+    while(true){ //this is an infinte loop
+      cout<<"So what is the lower bound?: ";
+      getline(cin,inx);    //this command lets the program read a line of characters even if it has a space
+      if(conversion(inx)||inx=="0"){  //If the conversion was a sucsess, then "If" is true
+        x=conversion(inx);    //assign the value of inx to x
+        break;  //jump out of the loop even if the command was not fulfilled
+      }
+      cout<<"This is not a valid number, please try again"<<endl;
+    }
+    while(true){
+      cout<<"And what is the higher bound?: ";
+      getline(cin,iny);
+      if(conversion(iny)||iny=="0"){
+        y=conversion(iny);
+        break;
+      }
+      cout<<"This is not a valid number, please try again"<<endl;
+    }
+    if(y<x)
+    cout<<"Wait, hold on. Your higher bound number is smaller than the lower bound. Let's try this again."<<endl;
+  }while(x>y);
+  answer=range(x,y);
+  cout<<"The sum of the range of these two integers is: "<<answer<<endl;
+}
