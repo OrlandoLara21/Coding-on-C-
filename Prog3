@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+float add(float a, float b){  //We have to use float on both the function and the variables
+  float r;
+  r=a+b;
+  return r;
+}
+
+float sub(float a, float b){
+  int r;
+  r=a-b;
+  return r;
+}
+
+float multi(float a, float b){
+  float r;
+  r=a*b;
+  return r;
+}
+
+float divi(float a, float b){
+  float r;
+  r=a/b;
+  return r;
+}
+
+int main(){
+  float a,b,mul,sum,res,di;
+  cout<<"Ok mister User I will do four mathematical operations"<<endl<<"Give me any number ";
+  cin>>a;
+  cout<<"Give another number ";
+  cin>>b;
+  mul=multi(a,b);
+  sum=add(a,b);
+  res=sub(a,b);
+  di=divi(a,b);
+  cout<<"The product of the two numbers is "<<mul<<endl;
+  cout<<"The division of the two numbers is "<<di<<endl;
+  cout<<"The sum is "<<sum<<endl;
+  cout<<"The subtraction is "<<res<<endl;
+  cout<<"Thankyou, see you next time\n";
+}
