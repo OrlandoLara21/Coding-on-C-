@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int x,y,num;
+  cout<<"Let's find out what the sum of a range of numbers is "<<endl;
+  cout<<"What is the lower bound number? ";
+  cin>>x;
+  cout<<"And what is the higher bound number? ";
+  cin>>y;
+  for(num=x++;x<=y;x++){  //2+3+4+5+6=20
+    num+=x; //num=num+x;
+  } //num=x; x=x+1;
+  cout<<"The sum of the range of the two numbers is "<<num<<endl;
+}
+//while(x<=y){
+//num+=x;
+//x++;
+//}
+//cout<<num;
