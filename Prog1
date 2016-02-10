@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+/* We have to use functions on both
+the funtion and the variables for this to work*/
+float volume (float a, float b){
+  float pi=3.14,v;
+  v=pi*a*a*b;
+  return v;
+}
+
+int main(){
+  float r,h,v;  //declare in float
+
+  cout<<"Hello, this program will give you the volume of a cylinder, but first...\n What is the radius of the cylinder? ";
+  cin>>r;
+  cout<<" And what is the height of the cylinder?";
+  cin>>h;
+  v=volume(r,h);
+  cout<<"Alright, so the volume of this cylinder is "<<v<<endl;
+}
