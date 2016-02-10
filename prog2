@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int multi(int a,int b){
+  int r;
+  r=a*b;
+  return r;
+}
+
+int divis(int a, int b){
+  int r;
+  r=a/b;
+  return r;
+}
+
+int remain(int a, int b){
+  int r;
+  r=a%b;
+  return r;
+}
+
+int main(){
+  int a,b,mul,divi,re;
+  cout<<"Ok mister User, I will realize 3 operations.\n Give me one integer ";
+  cin>>a;
+  cout<<"Give me the second integer ";
+  cin>>b;
+  mul=multi(a,b);
+  divi=divis(a,b);
+  re=remain(a,b);
+  cout<<"The product of the two integers is "<<mul<<endl;
+  cout<<"The integer division of the two numbers is "<<divi<<endl;
+  cout<<"The remainder of the division is "<<re<<endl;
+  cout<<"Thankyou, see you next time\n";
+}
