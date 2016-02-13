@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <cstdlib>
+#include <cmath>
+using namespace std;
+
+int stn(string a){
+  int num;
+  stringstream x(a);
+  x>>num;
+  return num;
+}
+
+int fibonacci(int n){
+  /*I am using if and else condicionals, but since all of them only
+  have one command each, there is no need for brackets*/
+  if(n==0||n==1)
+  return n;
+  else
+  return fibonacci(n-1)+fibonacci(n-2);
+}
+
+int main(){
+  string n;
+  int result,num;
+  cout<<"Please give a non-negative integer so that I can return to you that nth\ninteger of the fibonacci secuence."<<endl;
+  do{
+  while(1){
+    getline(cin,n);
+    if(stn(n)||n=="0"){
+      num=stn(n);
+      break;
+    }
+    cout<<"I'm sorry, this is not a valid number, try again\nwhat's the number? ";
+  }
+  if(num<0)
+  cout<<"I'm sorry, this is not a valid number, try again\nwhat's the number? ";
+}while(num<0);
+  result=fibonacci(num);
+  cout<<"the answer is "<<result<<endl;
+}
