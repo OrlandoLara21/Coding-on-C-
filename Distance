@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <cmath>
+using namespace std;
+
+float distance(float x1,float y1,float x2, float y2){
+  float c;
+  c=sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+  return c;
+}
+
+int main(){
+  float x1,x2,y1,y2,dist;
+  cout<<"Good day sir, we are going to work with the cartesian coordinate plane"<<endl;;
+  cout<<"and find out the distance between two points"<<endl;
+  cout<<"Ok, what are the coordinates of the first point?\nx1: ";
+  cin>>x1;
+  cout<<"y1: ";
+  cin>>y1;
+  cout<<"And what are the coordinates of the second point?\nx2: ";
+  cin>>x2;
+  cout<<"y2: ";
+  cin>>y2;
+  dist=distance(x1,y1,x2,y2);
+  cout<<"The distance between these two coordinates are "<<dist<<endl;
+}
