@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cfloat>
+using std::cout;
+using std::cin;
+using std::endl;
+
+int preciseNum(float x){
+  int num=0;
+  float y=1;
+  bool i,j,k;
+  while(x<y){
+    num++;
+    cout<<"Num is "<<num<<endl;
+    x*=10;
+    cout<<"x is "<<x<<endl;
+    i=(x<y);
+    j=(x==y);
+    k=(x>y);
+    cout<<"< statement is "<<i<<endl;
+    cout<<"= statement is "<<j<<endl;
+    cout<<"> statement is "<<k<<endl;
+  }
+  return num;
+}
+
+int main(){
+  int res;
+  float x;
+  cout<<"This program is for testing functions"<<endl;
+  cin>>x;
+  res=preciseNum(x);
+  cout<<"the result is "<<res<<endl;
+}
