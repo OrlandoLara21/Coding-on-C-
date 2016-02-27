@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::setprecision;
+
+int preciseNum(long double x){
+  int num=0;
+  while(x<0.9){
+    num++;
+    x*=10;
+  }
+  cout<<"preciseNum is "<<num<<endl;
+  return num;
+}
+
+int getFactorial(int n){
+  if(n==1||n==0)
+    return 1;
+  else{
+    return n*getFactorial(n-1);
+  }
+}
+
+long double euler_calc(long double x){
+  long double e=0.0,e1=0.0,e2=0.0,pre=x+1;
+  for(int n=0;pre>x;n++){
+    e1=e2;
+    e+=1.0/(getFactorial(n));
+    e2=e;
+    pre=e2-e1;    //this gives me the difference of the two values of e
+    cout<<"e is "<<e<<endl;
+    cout<<"pre is "<<setprecision(26)<<pre<<endl;
+  }
+  return e;
+}
+
+int main(){
+  long double e, precision;
+  cout<<endl<<"Hello, today we are going to find out what euler's number is"<<endl;
+  cout<<"I can calculate this number with a precision o no more than 8 decimal places."<<endl;
+  do{
+    cout<<"EXAMPLE(3 decimals):0.0001\nType in the precision ";
+    cin>>precision;
+    if(precision<0.000000000001)
+      cout<<"Hold on I can't calculate it with that much precision"<<endl;
+  }while(precision<0.000000000001);
+  e=euler_calc(precision);
+  cout<< "euler's number is equal to "<<setprecision(preciseNum(precision))<<e<<endl;
+}
