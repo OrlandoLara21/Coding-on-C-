@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <algorithm>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::vector;
+using std::string;
+
+int main(){
+  vector<string> v;
+  cout<<"Enter lines fo text to be stored,\n";
+  cout<<" followed by the word stop:\n";
+  while(true){
+    string s;
+    getline(cin,s);
+    if(s=="stop")
+    break;
+    v.push_back(s);
+  }
+  sort(v.begin(),v.end());
+  int n=v.size();
+  cout<<"The number of elements is: "<<n<<endl;
+  cout<<"The same lines after sorting:\n";
+  for(int i=0;i<v.size();i++)
+  cout<<v[i]<<endl;
+  return 0;
+}
