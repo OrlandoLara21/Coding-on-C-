@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+using std::cout;
+using std::cin;
+using std::endl;
+
+float getTotal(float arg[], int limit){
+  float r=0;
+  for(int n=0;n<limit;n++){
+    r+=arg[n];
+  }
+  return r;
+}
+
+float getAverage(float arg[],int limit){
+  float r=(getTotal(arg, limit))/limit;
+  return r;
+}
+
+float getStdDeviation(float arg[], int limit){
+  float average=getAverage(arg,limit);
+  float r=0;
+  for(int n=0;n<limit;n++){
+    r+=pow((average-arg[n]),2);
+  }
+  r=sqrt(r/(limit-1));
+  return r;
+}
+
+int main(){
+  int const AMOUNT=10;
+  float list[AMOUNT];
+  cout<<"This program calculates the total, avergae and standard deviation of 10 numbers you give me"<<endl;
+  for(int n=0;n<AMOUNT;n++){
+    cout<<"Type a number: ";
+    cin>>list[n];
+  }
+  float total=getTotal(list,AMOUNT);
+  float average=getAverage(list,AMOUNT);
+  float stdDeviation=getStdDeviation(list,AMOUNT);
+  cout<<"The total is: "<<total<<endl;
+  cout<<"The average is: "<<average<<endl;
+  cout<<"The standard deviation is: "<<stdDeviation<<endl;
+}
