@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include "BigIntegerLibrary.hh"
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::stringstream;
+
+BigInteger flip_num(BigInteger x){
+  string sto = bigIntegerToString(x);    //does what the name says
+  sto=string(sto.rbegin(),sto.rend());   //this flips the string
+  x=stringToBigInteger(sto);      //does what the name says
+  return x;
+}
+
+bool pal_or_lych(BigInteger subject){
+  for(int n=0;n<30;n++){
+    BigInteger flip=flip_num(subject);
+    if(flip==subject)       //if at any moment this becomes a palindrome the function stops and returns true
+    return true;
+    subject+=flip;
+  }
+  return false;   //if it never became a palindrome then it will return false
+}
+
+int main(){
+  BigInteger low_num,high_num,subject,flip,n,process,pal=0,palC=0,lyr=0;
+  string h,l;
+  cout<<"Hello, this program will find the lychrel numbers in a range that you decide"<<endl;
+  do{                                                             //varification loop starts here
+  cout<<"The lower bound of the sequence is: ";
+  cin>>l;                     //This loop just checks that the higher and lower bound are in order
+  low_num=stringToBigInteger(l);    //first we input in strings and then convert
+  cout<<"the higher bound of the sequece is: ";
+  cin>>h;
+  high_num=stringToBigInteger(h);
+  if(high_num<low_num)
+  cout<<"The higher bound is smaller than the lower bound, try again"<<endl;
+  }while(high_num<low_num);                                         //varification loop ends here
+  cout<<endl;
+  for(subject=low_num;subject<=high_num;subject++){
+    flip=flip_num(subject);
+    if(flip==subject)
+    pal++;
+    else{
+      bool q=pal_or_lych(subject);     //this function will give "true" if the subject is a palindrome
+      if(q==true)                      //Or it will give me "false" if it is not
+      palC++;
+      else{
+        cout<<"FOUND A LYCHREL NUMBER!: "<<subject<<endl;
+        lyr++;
+      }
+    }
+  }
+  cout<<"The amount of natural palindromes are: "<<pal<<endl;
+  cout<<"The amount of candidate palindromes are: "<<palC<<endl;
+  cout<<"The amount of lychrel numbers are: "<<lyr<<endl;
+}
