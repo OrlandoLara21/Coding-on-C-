@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+using std::cout;
+using std::cin;
+using std::endl;
+
+int euclid(int x,int y){
+  int z;
+  if(x==0)           //These are the conditions for the recursion to stop
+  return y;
+  else if(y==0)
+  return x;
+  else{
+    z=x%y;
+    return euclid(y,z);
+  }
+}
+
+int main(){
+  int x,y,gcd;
+  cout<<"Hello, I'm gonna help you find the Greatest Common Divisor of 2 numbers.\n";
+  cout<<"The first number is: ";
+  cin>>x;
+  cout<<"The second number is: ";
+  cin>>y;
+  gcd=euclid(x,y);
+  cout<<"The greatest common divisor for these numbers is: "<<gcd<<endl;
+}
