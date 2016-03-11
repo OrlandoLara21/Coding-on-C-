@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using std::string;
+using std::cin;
+using std::cout;
+using std::endl;
+
+string case_check(string text){
+  for(int n=0;n<text.size();n++){
+    if(text[n]<91 && text[n]>64)
+    text[n]+=32;
+  }
+  return text;
+}
+
+void is_palindrome(string text){
+  int n;
+  string new_text=case_check(text);  //converts all uppercase to lowercase
+  for(n=0;n<(text.size()/2);n++){
+    if(new_text[n]!=(new_text[text.size()-1-n]))           //d a d $ d a d
+    break;                                                 //0 1 2 3 4 5 6
+  }
+  if(n==(text.size()/2))
+  cout<<text<<" is a palindrome"<<endl;
+  else
+  cout<<text<<" is not a palindrome"<<endl;
+}
+
+int main(){
+  string text;
+  cout<<"I will tell you if what you typed is a palindrome\n";
+  cout<<"Go ahead and type anything you like: "<<endl;
+  getline(cin,text);
+  is_palindrome(text);
+}
