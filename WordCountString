@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int found=0,i=0;
+  string str="The wheels on the bus go round and round";
+  string str2="round";
+  while(found!=-1){         //second parameter is where to start looking
+  found=str.find(str2,i);  //first parameter is the string im looking for
+  cout<<"The answer is: "<<found<<endl;
+  i=found+1;
+}
+}
