@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int line_count(string str,string word){
+  int found,count=0,i=0;
+  while(1){
+    found=str.find(word,i);   //the first parameter is what string to look for
+    i=found+1;                //the second parameter is where to start looking
+    if(found!=-1) count++;
+    else break;
+  }
+  return count;
+}
+
+int text_count(string text, string word){
+  int count=0;
+  string line;
+  ifstream myfile;    //We are saying that it is a stream
+  myfile.open(text);   //when it is a variable we don't need the quotation marks
+  if(myfile.is_open())   //checks if the file opened or not
+  while(getline(myfile,line))  //the condition for this loop is if the getline function was succeful
+  count+=line_count(line,word);
+  else cout<<"Unable to open file"<<endl;
+  myfile.close();
+  return count;
+}
+
+int main(){
+  int answer;
+  string text,word;
+  cout<<"Hello, this program will tell you how many times a certain word appears in a text file.\n";
+  cout<<"EXAMPLE: example.txt\nWhat's the name of the text file: ";
+  getline(cin,text);
+  cout<<"What is the word you are looking for: ";
+  getline(cin,word);
+  answer=text_count(text,word);
+  cout<<"The number of times that this word appears in this file is: "<<answer<<endl;
+}
