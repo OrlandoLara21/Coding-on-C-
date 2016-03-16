@@ -1,0 +1,11 @@
+#include <ncurses.h>
+
+int main(){
+  initscr();
+  mvprintw(6,10,"Hello world");
+  mvprintw(30,20,"This is awsome");
+  mvprintw(0,0,"Ncurses is the bomb"); //move(6,10)
+  refresh();
+  getch();
+  endwin();
+}
